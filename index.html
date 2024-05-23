@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://localhost:3001/sdk/web/sberid-sdk.prodaction.js"></script>
+  </head>
+  <body>
+    <div id="button"></div>
+    <script>
+      new window.SberisSDK({
+        oidc: {
+          response_type: 'code',
+          client_type: 'PRIVATE',
+          client_id: 'F4968563-C74F-A1FC-FC41-6207E1942B55',
+          state: 'state_00000',
+          nonce: 'nonce_00000',
+          scope: 'openid',
+          redirect_uri: ''
+        },
+        baseUrl: 'https://localhost:3001',
+        fastLogin: {
+          enabled: false
+        },
+        notification: {
+          enabled: false
+        },
+        container: '#button',
+        checkStorageAccess: true,
+        debug: true
+      }).init().then(() => {
+        console.log('Init success')
+      })
+    </script>
+  </body>
+</html>
